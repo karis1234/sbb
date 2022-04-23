@@ -20,6 +20,14 @@ class SbbApplicationTests {
 	private AnswerRepository answerRepository;
 
 	@Test
+	void testQuestionFind() {
+		Optional<Answer> oa = answerRepository.findById(1);
+		assertTrue(oa.isPresent());
+		Answer a = oa.get();
+		assertEquals(2, a.getQuestion().getId());
+	}
+
+	@Test
 	void testCreateAnswer() {
 		Optional<Question> oq = this.questionRepository.findById(2);
 		assertTrue(oq.isPresent());
