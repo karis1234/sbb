@@ -67,4 +67,11 @@ class SbbApplicationTests {
 		assertEquals(q.getId(),1);
 	}
 
+	@Test
+	void testFindBySubjectLike(){
+		List<Question> qList = questionRepository.findBySubjectLike("%sbb%");
+		Question q = qList.get(0);
+		assertEquals(q.getId(),1);
+	}
+
 }
