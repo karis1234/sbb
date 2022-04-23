@@ -55,4 +55,10 @@ class SbbApplicationTests {
 		}
 	}
 
+	@Test
+	void testFindBySubject(){
+		Question q = questionRepository.findBySubject("sbb가 무엇인가요?").get();
+		assertEquals(q.getId(),1);
+	}
+
 }
