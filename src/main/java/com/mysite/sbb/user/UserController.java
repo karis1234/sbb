@@ -17,6 +17,11 @@ public class UserController {
 
     private final UserService userService;
 
+    @GetMapping("/login")
+    public String login() {
+        return "login_form";
+    }
+
     @GetMapping("/signup")
     // 보여주는 창(화면)
     public String signup(UserCreateForm userCreateForm) {
