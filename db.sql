@@ -1,7 +1,7 @@
 # DB 재생성
-DROP DATABASE IF EXISTS sbb_2nd;
-CREATE DATABASE sbb_2nd;
-USE sbb_2nd;
+DROP DATABASE IF EXISTS sbb;
+CREATE DATABASE sbb;
+USE sbb;
 
 # 질문 테이블 생성
 CREATE TABLE question (
@@ -29,6 +29,19 @@ INSERT INTO question
 SET create_date = NOW(),
 `subject` = '스프링부트 모델 질문입니다.',
 content = 'id는 자동으로 생성되나요?';
+
+# 테스트용 답변 2개 생성
+INSERT INTO answer
+SET create_date = NOW(),
+content = 'sbb는 스프링부트에 관련된 qna 사이트 입니다.',
+question_id = 1,
+author_id = 2;
+
+INSERT INTO answer
+SET create_date = NOW(),
+content = '네! 자동으로 생성됩니다.',
+question_id = 2,
+author_id = 2;
 
 # 사용자 테이블 생성
 CREATE TABLE site_user (
