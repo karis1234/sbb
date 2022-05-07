@@ -5,6 +5,7 @@ import com.mysite.sbb.answer.AnswerRepository;
 import com.mysite.sbb.question.Question;
 import com.mysite.sbb.question.QuestionRepository;
 import com.mysite.sbb.question.QuestionService;
+import com.mysite.sbb.user.SiteUser;
 import com.mysite.sbb.user.UserService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -156,7 +157,7 @@ class SbbApplicationTests {
 		for (int i = 1; i <= 300; i++) {
 			String subject = "테스트 데이터입니다 : [%03d]".formatted(i);
 			String content = "내용무 : %d".formatted((int) (Math.random() * 100));
-			questionService.create(subject, content);
+			questionService.create(subject, content, null);
 		}
 	}
 
